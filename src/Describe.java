@@ -6,6 +6,7 @@ public class Describe {
         // Display the current username
         System.out.println("User: " + System.getProperty("user.name"));
         System.out.println();
+        assert System.getProperty("user.name").length() > 0;
 
         // Describe how many characters can be read from stdin
         long charCount = 0;
@@ -18,6 +19,7 @@ public class Describe {
                 charCount += charsRead;
             } while (charsRead > 0);
         }
+        assert charCount > 0;
         System.out.format("Read %d chars from stdin", charCount);
         System.out.println();
 
@@ -32,6 +34,7 @@ public class Describe {
         System.out.println("Environment variables starting with the letter H:");
         System.out.println("-------------------------------------------------");
         Map<String,String> env = System.getenv();
+        assert !env.isEmpty();
         env.entrySet().stream()
                 .filter(x -> x.getKey().toUpperCase().startsWith("H"))
                 .forEach(x -> System.out.format("%30s: %-40s%s", x.getKey(), x.getValue(), System.lineSeparator()));
