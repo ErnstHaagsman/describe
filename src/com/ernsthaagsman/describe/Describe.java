@@ -1,3 +1,5 @@
+package com.ernsthaagsman.describe;
+
 import java.io.InputStreamReader;
 import java.util.Map;
 
